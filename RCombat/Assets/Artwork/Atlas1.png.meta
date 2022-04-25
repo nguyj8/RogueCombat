@@ -49,13 +49,13 @@ TextureImporter:
     second: floor_7
   - first:
       213: 2479082299692958151
-    second: fountain_1
+    second: redfountain_1
   - first:
       213: 4507035918195378673
-    second: fountain_2
+    second: redfountain_2
   - first:
       213: 5315797300628676654
-    second: fountain_3
+    second: redfountain_3
   - first:
       213: 3458567544598289016
     second: pillar_1
@@ -173,6 +173,27 @@ TextureImporter:
   - first:
       213: -7336842872711762074
     second: health_2
+  - first:
+      213: -5897289590877365570
+    second: skull
+  - first:
+      213: 8211014600607216736
+    second: bluefountain_2
+  - first:
+      213: -8963242258005937212
+    second: bluefountain_1
+  - first:
+      213: -5431624834948719458
+    second: bluefountain_3
+  - first:
+      213: 3531777820829592387
+    second: bigboss_1
+  - first:
+      213: 2387791140313805785
+    second: bigboss_2
+  - first:
+      213: 505607051257393783
+    second: bigboss_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -217,7 +238,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 99
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -577,7 +598,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fountain_1
+      name: redfountain_1
       rect:
         serializedVersion: 2
         x: 64
@@ -598,7 +619,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fountain_2
+      name: redfountain_2
       rect:
         serializedVersion: 2
         x: 64
@@ -619,7 +640,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fountain_3
+      name: redfountain_3
       rect:
         serializedVersion: 2
         x: 64
@@ -1404,7 +1425,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1425,7 +1446,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1446,7 +1467,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1454,6 +1475,153 @@ TextureImporter:
       bones: []
       spriteID: 66fa82f874c4e2a90800000000000000
       internalID: -7336842872711762074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 174
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba552ebc5e982ea0800000000000000
+      internalID: -5897289590877365570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bluefountain_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0643db2864263f170800000000000000
+      internalID: 8211014600607216736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bluefountain_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c339c7d7aa2c9380800000000000000
+      internalID: -8963242258005937212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bluefountain_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c11b79dfdfe94b0800000000000000
+      internalID: -5431624834948719458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigboss_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 207
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ba6244735630130800000000000000
+      internalID: 3531777820829592387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigboss_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 158
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3ba3c1463232120800000000000000
+      internalID: 2387791140313805785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigboss_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 112
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772312e2fe6440700800000000000000
+      internalID: 505607051257393783
       vertices: []
       indices: 
       edges: []

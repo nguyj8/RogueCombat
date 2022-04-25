@@ -12,7 +12,7 @@ public abstract class Mover : Fighter // Anything that moves is treated as a fig
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
     protected float ySpeed = 0.75f;
-    protected float xSpeed = 1.0f;
+    protected float xSpeed = 0.75f;
 
     protected virtual void Start() // may be overwritten
     {

@@ -7,9 +7,14 @@ using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
 {
-    public Transform perspective;
+    private Transform perspective;
     public float boundX = 0.30f;
     public float boundY = 0.15f;
+
+    private void Start()
+    {
+        perspective = GameObject.Find("Player").transform;
+    }
 
     private void LateUpdate()
     {

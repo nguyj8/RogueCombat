@@ -33,10 +33,13 @@ public class Collidable : MonoBehaviour
             hits[i] = null;
         }
     }
+
     protected virtual void OnCollide(Collider2D coll)
     {
         Debug.Log("OnCollide was not implemented in " + this.name); 
     }
+
+
 
 
 }

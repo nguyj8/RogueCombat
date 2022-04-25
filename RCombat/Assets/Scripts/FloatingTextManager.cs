@@ -13,6 +13,11 @@ public class FloatingTextManager : MonoBehaviour
 
     private List<FloatingText> floatingTexts = new List<FloatingText>();
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject); // Floating text will never be destroyed when transitioning from scene to scene 
+    }
+
     private void Update()
     {
         // Updates every floating text every frame 

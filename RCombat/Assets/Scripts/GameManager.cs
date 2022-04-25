@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class GameManager : MonoBehaviour
         {
             // Destroy following objects 
             Destroy(gameObject);
-            //Destroy(player.gameObject);
-            //Destroy(floatingTextManager.gameObject); 
+            Destroy(player.gameObject);
+            Destroy(floatingTextManager.gameObject); 
           
             return;
         }
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     public int treasure;
     // Experience 
     public int experience;
+    // Health
 
     // Have only one reference from anywhere to use the showing text - floating text 
     public void ShowText(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
@@ -67,6 +69,8 @@ public class GameManager : MonoBehaviour
         // If none are called, return false 
         return false;
     }
+
+    // Health
 
     // Experience system - Both functions calculates experience and or level 
     public int GetCurrentLevel() // States current level 
@@ -150,6 +154,8 @@ public class GameManager : MonoBehaviour
 
         // Change weapon level
         weapon.SetWeaponLevel(int.Parse(data[3]));
-        Debug.Log("LoadState");
+
+        // Player loaded into set spawn point of each scene
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }
