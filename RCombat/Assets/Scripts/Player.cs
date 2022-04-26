@@ -14,12 +14,12 @@ public class Player : Mover
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        DontDestroyOnLoad(gameObject); // Does not destroy player and its attachment
     }
 
     protected override void ReceiveDamage(Damage damage)
     {
         base.ReceiveDamage(damage);
+        GameManager.instance.OnHealthChange();
     }
 
     private void FixedUpdate()
@@ -36,8 +36,9 @@ public class Player : Mover
     }
     public void LevelUp()
     {
-        maxHitPoint++;
-        hitPoint = maxHitPoint;
+        //maxHitPoint++;
+        //hitPoint = maxHitPoint;
+        GameManager.instance.ShowText("+" + " 1 UP", 25, Color.green, transform.position, Vector3.up * 50, 1.2f);
     }
     public void SetLevel(int level) // When starting game, may set the level 
     {

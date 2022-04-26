@@ -18,13 +18,15 @@ public class GameManager : MonoBehaviour
             // Destroy following objects 
             Destroy(gameObject);
             Destroy(player.gameObject);
-            Destroy(floatingTextManager.gameObject); 
-          
+            Destroy(floatingTextManager.gameObject);
+            Destroy(hud);
+            Destroy(menu);
+
             return;
         }
         instance = this;
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded; 
     }
 
     // Resources
@@ -39,11 +41,16 @@ public class GameManager : MonoBehaviour
     public Weapon weapon;
     // Floating Text Manager 
     public FloatingTextManager floatingTextManager;
+    // Health
+    public RectTransform healthBar;
+    // HUD
+    public GameObject hud;
+    // Menu
+    public GameObject menu; 
     // Treasure
     public int treasure;
     // Experience 
     public int experience;
-    // Health
 
     // Have only one reference from anywhere to use the showing text - floating text 
     public void ShowText(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
@@ -70,7 +77,12 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    // Health
+    // Health Bar
+    public void OnHealthChange()
+    {
+        float ratio = (float)player.hitPoint / (float)player.maxHitPoint;
+        healthBar.localScale = new Vector3(ratio, 1, 1); 
+    }
 
     // Experience system - Both functions calculates experience and or level 
     public int GetCurrentLevel() // States current level 
@@ -117,6 +129,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Level up!");
         player.LevelUp();
+        OnHealthChange();
+    }
+
+    // Scene Loaded
+    public void OnSceneLoaded(Scene s, LoadSceneMode mode)
+    {
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position; 
     }
 
     // Save state
@@ -132,6 +151,8 @@ public class GameManager : MonoBehaviour
     }
     public void LoadState(Scene s, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded -= LoadState;
+
         if (!PlayerPrefs.HasKey("SaveState"))
         {
             return; 
@@ -156,6 +177,5 @@ public class GameManager : MonoBehaviour
         weapon.SetWeaponLevel(int.Parse(data[3]));
 
         // Player loaded into set spawn point of each scene
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }
