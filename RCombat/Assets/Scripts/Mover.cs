@@ -8,14 +8,17 @@ using UnityEngine;
 // Cannot drag and drop from object but must be inherited 
 public abstract class Mover : Fighter // Anything that moves is treated as a fighter
 {
+    private Vector3 originalSize; 
+
     protected BoxCollider2D boxCollider;
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
-    protected float ySpeed = 0.75f;
-    protected float xSpeed = 0.75f;
+    public float ySpeed = 0.75f;
+    public float xSpeed = 0.75f;
 
     protected virtual void Start() // may be overwritten
     {
+        originalSize = transform.localScale;
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -28,11 +31,11 @@ public abstract class Mover : Fighter // Anything that moves is treated as a fig
         // Swap sprite direction
         if (moveDelta.x > 0)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = originalSize;
         }
         else if (moveDelta.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(originalSize.x * -1, originalSize.y, originalSize.z);
         }
 
         // Add push vector, if any

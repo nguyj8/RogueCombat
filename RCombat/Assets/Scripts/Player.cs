@@ -8,7 +8,7 @@ using UnityEngine;
 public class Player : Mover
 {
     private SpriteRenderer spriteRenderer;
-
+    private bool isAlive = true;
 
     protected override void Start()
     {
@@ -18,16 +18,29 @@ public class Player : Mover
 
     protected override void ReceiveDamage(Damage damage)
     {
+        if (!isAlive)
+        {
+            return; 
+        }
+
         base.ReceiveDamage(damage);
         GameManager.instance.OnHealthChange();
     }
-
+    protected override void Death()
+    {
+        isAlive = false;
+        GameManager.instance.death.SetTrigger("Show");
+        //GameManager.instance.Respawn();x 
+    }
     private void FixedUpdate()
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        UpdateMotor(new Vector3(x, y, 0));
+        if (isAlive)
+        {
+            UpdateMotor(new Vector3(x, y, 0));
+        }
     }
 
     public void SwapSprite(int skinId)
@@ -46,6 +59,13 @@ public class Player : Mover
         {
             LevelUp();
         }
+    }
+    public void Respawn() // Game Over
+    {
+        isAlive = true;
+        maxHitPoint = 3;
+        lastImmune = Time.time;
+        pushDirection = Vector3.zero;
     }
 
 }

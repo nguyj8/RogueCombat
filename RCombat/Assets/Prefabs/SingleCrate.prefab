@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504e5b5972cda4176beca46a78e2b09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 10
-  maxHitPoint: 10
+  hitPoint: 1
+  maxHitPoint: 1
   pushRecoverySpeed: 0.2
 --- !u!1 &5705821162427491949
 GameObject:

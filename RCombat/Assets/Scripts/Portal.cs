@@ -16,9 +16,12 @@ public class Portal : Collidable
         {
             // Teleport the player
             GameManager.instance.SaveState();
-            // May alter in Unity Inspector 
-            string sceneName = sceneNames[Random.Range(0, sceneNames.Length)]; // Total of 4 scenes 
-            SceneManager.LoadScene(sceneName);
+            // May alter in Unity Inspector
+
+            //string sceneName = sceneNames(0, sceneNames.Length); // Total of 4 scenes
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            //SceneManager.LoadScene(sceneName);
         }
     }
 }

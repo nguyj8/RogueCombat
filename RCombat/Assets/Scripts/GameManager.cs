@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
             Destroy(floatingTextManager.gameObject);
             Destroy(hud);
             Destroy(menu);
+            Destroy(instruct); 
 
             return;
         }
@@ -46,7 +47,11 @@ public class GameManager : MonoBehaviour
     // HUD
     public GameObject hud;
     // Menu
-    public GameObject menu; 
+    public GameObject menu;
+    // Instructions
+    public GameObject instruct;
+    // Death Menu
+    public Animator death;
     // Treasure
     public int treasure;
     // Experience 
@@ -129,7 +134,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Level up!");
         player.LevelUp();
-        OnHealthChange();
     }
 
     // Scene Loaded
@@ -137,6 +141,19 @@ public class GameManager : MonoBehaviour
     {
         player.transform.position = GameObject.Find("SpawnPoint").transform.position; 
     }
+
+    // Death Menu and Respawn
+    public void Respawn()
+    {
+        death.SetTrigger("Hide");
+        SceneManager.LoadScene("Main");
+        player.Respawn();
+    }
+    // Restarts Game
+    //public void Restart() 
+    //{
+    //    player.Respawn();
+    //}
 
     // Save state
     public void SaveState()
